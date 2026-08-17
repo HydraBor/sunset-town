@@ -1,12 +1,13 @@
 ---
 const { title = "落日小镇", description = "落日小镇，Minecraft 生存服务器" } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
 <html lang="zh-CN" class="dark">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -23,7 +24,7 @@ const { title = "落日小镇", description = "落日小镇，Minecraft 生存�
       class="sticky top-0 z-50 backdrop-blur bg-night-900/80 border-b border-night-600/50"
     >
       <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2 group">
+        <a href={`${base}`} class="flex items-center gap-2 group">
           <span
             class="w-8 h-8 grid place-items-center bg-gradient-to-br from-dusk-400 to-dusk-600 rounded-lg shadow-glow text-night-900 font-bold text-sm"
             >落</span
@@ -33,11 +34,11 @@ const { title = "落日小镇", description = "落日小镇，Minecraft 生存�
           </span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-          <a href="/" class="hover:text-dusk-300 transition-colors">首页</a>
-          <a href="/worlds/" class="hover:text-dusk-300 transition-colors">世界</a>
-          <a href="/features/" class="hover:text-dusk-300 transition-colors">玩法</a>
-          <a href="/vip/" class="hover:text-dusk-300 transition-colors">赞助</a>
-          <a href="/guide/" class="hover:text-dusk-300 transition-colors">规则与新手</a>
+          <a href={`${base}`} class="hover:text-dusk-300 transition-colors">首页</a>
+          <a href={`${base}worlds/`} class="hover:text-dusk-300 transition-colors">世界</a>
+          <a href={`${base}features/`} class="hover:text-dusk-300 transition-colors">玩法</a>
+          <a href={`${base}vip/`} class="hover:text-dusk-300 transition-colors">赞助</a>
+          <a href={`${base}guide/`} class="hover:text-dusk-300 transition-colors">规则与新手</a>
         </div>
         <div class="hidden md:block">
           <code class="px-3 py-1.5 rounded-lg bg-night-700 text-dusk-300 text-sm border border-dusk-500/40">
@@ -51,11 +52,11 @@ Play.SunsetTown.cn
         >☰</button>
       </nav>
       <div class="md:hidden hidden px-4 pb-4 space-y-3 text-sm" data-menu>
-        <a href="/" class="block hover:text-dusk-300">首页</a>
-        <a href="/worlds/" class="block hover:text-dusk-300">世界</a>
-        <a href="/features/" class="block hover:text-dusk-300">玩法</a>
-        <a href="/vip/" class="block hover:text-dusk-300">赞助</a>
-        <a href="/guide/" class="block hover:text-dusk-300">规则与新手</a>
+        <a href={`${base}`} class="block hover:text-dusk-300">首页</a>
+        <a href={`${base}worlds/`} class="block hover:text-dusk-300">世界</a>
+        <a href={`${base}features/`} class="block hover:text-dusk-300">玩法</a>
+        <a href={`${base}vip/`} class="block hover:text-dusk-300">赞助</a>
+        <a href={`${base}guide/`} class="block hover:text-dusk-300">规则与新手</a>
       </div>
     </header>
 
