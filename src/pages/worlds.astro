@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site, worlds } from "../data/site";
+---
+
+<Layout title={`世界介绍 — ${site.name}`} description="了解落日小镇的六大世界：主城、生存、资源、地皮、下界与末地。">
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-dusk-50 mb-2">六大世界</h1>
+    <p class="text-slate-400 mb-12">每个世界各司其职，共同构成落日小镇的完整生态。</p>
+
+    <div class="space-y-8">
+      {
+        worlds.map((w) => (
+          <article class="rounded-2xl bg-night-800/70 border border-night-600/50 overflow-hidden hover:border-dusk-500/40 transition-colors">
+            <div class={`bg-gradient-to-r ${w.color} h-2`}></div>
+            <div class="p-8">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <h2 class="text-2xl font-bold text-dusk-50">{w.name}</h2>
+                <span class="text-xs px-3 py-1 rounded-full bg-night-600 text-dusk-200">{w.tag}</span>
+              </div>
+              <p class="text-slate-300 mb-6 max-w-2xl">{w.desc}</p>
+              <ul class="grid sm:grid-cols-2 gap-3 max-w-3xl">
+                {
+                  w.points.map((p) => (
+                    <li class="flex gap-2 text-sm text-slate-400">
+                      <span class="text-dusk-400">▸</span>
+                      {p}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-slate-400 mb-4">准备好开始你的开荒了吗？</p>
+      <code class="px-8 py-4 rounded-xl bg-night-700 border border-dusk-500/50 text-dusk-300">
+        {site.address}
+      </code>
+    </div>
+  </section>
+</Layout>

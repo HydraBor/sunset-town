@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site, vipTiers, noDonate } from "../data/site";
+---
+
+<Layout title={`赞助中心 — ${site.name}`} description="落日小镇 VIP 赞助，主打便利、身份与展示，不出售碾压级战力。">
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-dusk-50 mb-2">赞助中心</h1>
+    <p class="text-slate-400 mb-4">便利 · 身份 · 展示优先，战斗力其次。</p>
+    <p class="text-sm text-dusk-300 mb-12">赞助主要出售便利、身份和展示，不出售无法追赶的永久优势。</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {
+        vipTiers.map((t) => (
+          <div class={`rounded-2xl bg-night-800/70 border p-8 relative ${t.color} ${t.highlight ? "shadow-glow" : ""}`}>
+            {
+              t.highlight && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-xs px-4 py-1 rounded-full bg-gradient-to-r from-dusk-500 to-dusk-600 text-white font-bold">
+                  推荐
+                </span>
+              )
+            }
+            <p class="text-dusk-400 font-bold mb-1">{t.level}</p>
+            <h2 class="text-2xl font-bold text-dusk-50 mb-1">{t.name}</h2>
+            <p class="text-dusk-300 mb-6">{t.price}</p>
+            <ul class="space-y-3 text-sm text-slate-400">
+              {
+                t.perks.map((p) => (
+                  <li class="flex gap-2">
+                    <span class="text-dusk-400">✓</span>
+                    {p}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="rounded-2xl bg-night-800/70 border border-red-500/30 p-8">
+      <h2 class="text-xl font-bold text-dusk-100 mb-4">赞助不提供</h2>
+      <p class="text-sm text-slate-400 mb-6">让普通玩家放心：不充钱也能玩到所有核心内容。</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {
+          noDonate.map((n) => (
+            <p class="text-sm text-slate-400 flex gap-2 items-center">
+              <span class="text-red-400">✕</span>
+              {n}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-12 text-center text-sm text-slate-500">
+      <p>具体档位价格与权益请以服务器内实际配置为准。</p>
+      <p>详情请加入 QQ 群 / Discord 咨询管理组。</p>
+    </div>
+  </section>
+</Layout>

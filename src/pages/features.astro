@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../data/site";
+---
+
+<Layout title={`玩法系统 — ${site.name}`} description="落日小镇的金币经济、玩家市场、装备成长、活动与排行榜系统。">
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-dusk-50 mb-2">玩法系统</h1>
+    <p class="text-slate-400 mb-12">稳定、可持续、为长期运营设计。</p>
+
+    <!-- 经济 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">💰</span>
+        <h2 class="text-2xl font-bold text-dusk-50">金币经济</h2>
+      </div>
+      <p class="text-slate-300 mb-6">服务器统一货币，贯穿交易、拍卖、商店与活动。</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-dusk-300 mb-3">金币来源</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li>▸ 每日签到 / 基础每日任务（少量）</li>
+            <li>▸ 活动奖励（中等）</li>
+            <li>▸ 玩家间交易（主要积累）</li>
+            <li>▸ NPC 基础收购（最低收入保障）</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-dusk-300 mb-3">金币回收</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li>▸ 玩家市场成交税（约 3%）</li>
+            <li>▸ NPC 特殊商品</li>
+            <li>▸ 活动报名费</li>
+            <li>▸ 特殊传送费用</li>
+            <li>▸ 后续装备强化 / 工会建设</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 市场 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏪</span>
+        <h2 class="text-2xl font-bold text-dusk-50">玩家自由市场</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5">
+          <h3 class="font-bold text-dusk-200 mb-3">🏛 拍卖行</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">上架、搜索、购买、管理自己的商品，最基础也最方便的交易方式。上架免费，成交收取约 3% 税。</p>
+        </div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5">
+          <h3 class="font-bold text-dusk-200 mb-3">🏘 玩家商店</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">在地皮建造实体商店，放置交易箱设置售价与收购价，支持 <code class="text-dusk-300">/pw 玩家名</code> 直接前往，逐渐形成商业街。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 装备成长 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚔️</span>
+        <h2 class="text-2xl font-bold text-dusk-50">装备成长</h2>
+      </div>
+      <p class="text-slate-300 mb-6">原版装备为主，少量超越原版的附魔提供毕业后的成长目标。</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded-lg bg-night-900 border border-dusk-500/30 text-dusk-300 text-sm">效率 VI / VII</span>
+        <span class="px-4 py-2 rounded-lg bg-night-900 border border-dusk-500/30 text-dusk-300 text-sm">保护 V</span>
+        <span class="px-4 py-2 rounded-lg bg-night-900 border border-dusk-500/30 text-dusk-300 text-sm">锋利 VI</span>
+        <span class="px-4 py-2 rounded-lg bg-night-900 border border-dusk-500/30 text-dusk-300 text-sm">活动 / Boss / 稀有兑换获取</span>
+      </div>
+      <p class="text-xs text-slate-500 mt-4">高等级装备可以很难获得，但不应永久限定为充值获取。</p>
+    </div>
+
+    <!-- 活动 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🎉</span>
+        <h2 class="text-2xl font-bold text-dusk-50">常驻活动</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5"><h3 class="font-bold text-dusk-200 mb-2">主城寻宝</h3><p class="text-sm text-slate-400">主城隐藏宝箱，内含金币与活动道具，提升主城利用率。</p></div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5"><h3 class="font-bold text-dusk-200 mb-2">钓鱼比赛</h3><p class="text-sm text-slate-400">比拼数量、稀有鱼与最大鱼，养老玩家的首选活动。</p></div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5"><h3 class="font-bold text-dusk-200 mb-2">射箭比赛</h3><p class="text-sm text-slate-400">固定靶、移动靶与距离挑战，简单竞技。</p></div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5"><h3 class="font-bold text-dusk-200 mb-2">跑酷活动</h3><p class="text-sm text-slate-400">主城跑酷，限时排行榜，不依赖装备人人可玩。</p></div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5"><h3 class="font-bold text-dusk-200 mb-2">在线随机活动</h3><p class="text-sm text-slate-400">在线抽奖、限时答题、特殊怪物出现，增加在线动力。</p></div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5"><h3 class="font-bold text-dusk-200 mb-2">活动奖励</h3><p class="text-sm text-slate-400">金币 · 活动代币 · 限定称号 · 收藏品，避免发放顶级装备破坏平衡。</p></div>
+      </div>
+    </div>
+
+    <!-- 排行榜 / 社交 -->
+    <div class="grid sm:grid-cols-2 gap-8 mb-8">
+      <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🏆</span>
+          <h2 class="text-xl font-bold text-dusk-50">排行榜</h2>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li>▸ 财富榜</li>
+          <li>▸ 在线时长榜</li>
+          <li>▸ 活动积分榜</li>
+          <li>▸ 钓鱼榜</li>
+          <li>▸ 建筑 / 地皮人气榜</li>
+          <li class="text-slate-500">主城展示 TOP 3，为工会排行榜做准备</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🤝</span>
+          <h2 class="text-xl font-bold text-dusk-50">社交系统</h2>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li>▸ 私聊 / 公共聊天</li>
+          <li>▸ 组队 / 好友</li>
+          <li>▸ 玩家资料（在线时长 / 财富 / 称号 / VIP）</li>
+          <li class="text-slate-500">后续加入工会、收藏数量、Boss 击杀与赛季荣誉</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <code class="px-8 py-4 rounded-xl bg-night-700 border border-dusk-500/50 text-dusk-300">
+        {site.address}
+      </code>
+    </div>
+  </section>
+</Layout>

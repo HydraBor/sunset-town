@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site, rules } from "../data/site";
+---
+
+<Layout title={`规则与新手 — ${site.name}`} description="落日小镇服务器规则、新手任务指引与 FAQ。">
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-dusk-50 mb-2">规则与新手</h1>
+    <p class="text-slate-400 mb-12">欢迎来到落日小镇，从这里开始你的开荒之旅。</p>
+
+    <!-- 新手任务 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🌱</span>
+        <h2 class="text-2xl font-bold text-dusk-50">新手任务</h2>
+      </div>
+      <p class="text-slate-400 text-sm mb-6">一步步引导你熟悉小镇的一切。</p>
+      <ol class="grid sm:grid-cols-2 gap-3">
+        {
+          [
+            "砍下第一棵树",
+            "建造工作台",
+            "获得铁锭",
+            "前往资源世界",
+            "创建你的领地",
+            "领取一块地皮",
+            "完成第一次交易",
+            "参加一次活动",
+          ].map((t, i) => (
+            <li class="flex items-center gap-3 text-slate-300 text-sm">
+              <span class="w-7 h-7 shrink-0 grid place-items-center rounded-full bg-dusk-500/20 text-dusk-300 text-xs font-bold">
+                {i + 1}
+              </span>
+              {t}
+            </li>
+          ))
+        }
+      </ol>
+      <div class="mt-8 rounded-xl bg-night-900/60 border border-night-600/50 p-5">
+        <h3 class="font-bold text-dusk-200 mb-2">🎁 新手礼包</h3>
+        <p class="text-sm text-slate-400">
+          简单新手礼包：少量食物、基础工具与新手传送说明。
+          <span class="text-slate-500">不直接赠送钻石套、下界合金套或大量金币。</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 基础便利 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏠</span>
+        <h2 class="text-2xl font-bold text-dusk-50">基础便利</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5">
+          <h3 class="font-bold text-dusk-200 mb-2">圈地</h3>
+          <p class="text-slate-400">创建领地，防止破坏与盗取，可设置成员与访问权限。</p>
+        </div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5">
+          <h3 class="font-bold text-dusk-200 mb-2">HOME</h3>
+          <p class="text-slate-400">基础玩家 1~2 个 HOME，VIP 根据等级增加。</p>
+        </div>
+        <div class="rounded-xl bg-night-900/60 border border-night-600/50 p-5">
+          <h3 class="font-bold text-dusk-200 mb-2">传送</h3>
+          <p class="text-slate-400"><code class="text-dusk-300">/tpa</code> · <code class="text-dusk-300">/tpaccept</code> · <code class="text-dusk-300">/tpdeny</code>，支持地皮与主城传送。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 死亡机制 -->
+    <div class="rounded-2xl bg-night-800/70 border border-night-600/50 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-3xl">💀</span>
+        <h2 class="text-xl font-bold text-dusk-50">死亡机制</h2>
+      </div>
+      <p class="text-sm text-slate-400">
+        默认保留原版死亡掉落，保留生存风险；通过活动、道具或赞助提供有限便利，并加入死亡坐标提示、墓碑与限时掉落物保护，减少意外死亡的挫败感。
+      </p>
+    </div>
+
+    <!-- 服务器规则 -->
+    <div class="rounded-2xl bg-night-800/70 border border-red-500/30 p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">📜</span>
+        <h2 class="text-2xl font-bold text-dusk-50">服务器规则</h2>
+      </div>
+      <ul class="space-y-3">
+        {
+          rules.map((r) => (
+            <li class="flex gap-3 text-slate-300 text-sm">
+              <span class="text-red-400">✕</span>
+              {r}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="text-xs text-slate-500 mt-6">原则：不因为「能刷资源」就全部禁止，只处理明显破坏服务器寿命和平衡的机制。</p>
+    </div>
+
+    <div class="text-center">
+      <p class="text-slate-400 mb-4">准备好开始了吗？</p>
+      <code class="px-8 py-4 rounded-xl bg-night-700 border border-dusk-500/50 text-dusk-300">
+        {site.address}
+      </code>
+    </div>
+  </section>
+</Layout>

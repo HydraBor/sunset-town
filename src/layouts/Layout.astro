@@ -1,0 +1,89 @@
+---
+const { title = "落日小镇", description = "落日小镇，Minecraft 生存服务器" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-night-900 text-slate-200 antialiased min-h-screen flex flex-col">
+    <header
+      class="sticky top-0 z-50 backdrop-blur bg-night-900/80 border-b border-night-600/50"
+    >
+      <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <span
+            class="w-8 h-8 grid place-items-center bg-gradient-to-br from-dusk-400 to-dusk-600 rounded-lg shadow-glow text-night-900 font-bold text-sm"
+            >落</span
+          >
+          <span class="font-bold text-lg text-dusk-100 group-hover:text-dusk-300 transition-colors">
+            落日小镇
+          </span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+          <a href="/" class="hover:text-dusk-300 transition-colors">首页</a>
+          <a href="/worlds/" class="hover:text-dusk-300 transition-colors">世界</a>
+          <a href="/features/" class="hover:text-dusk-300 transition-colors">玩法</a>
+          <a href="/vip/" class="hover:text-dusk-300 transition-colors">赞助</a>
+          <a href="/guide/" class="hover:text-dusk-300 transition-colors">规则与新手</a>
+        </div>
+        <div class="hidden md:block">
+          <code class="px-3 py-1.5 rounded-lg bg-night-700 text-dusk-300 text-sm border border-dusk-500/40">
+Play.SunsetTown.cn
+          </code>
+        </div>
+        <button
+          class="md:hidden text-dusk-200 text-2xl"
+          aria-label="菜单"
+          data-menu-toggle
+        >☰</button>
+      </nav>
+      <div class="md:hidden hidden px-4 pb-4 space-y-3 text-sm" data-menu>
+        <a href="/" class="block hover:text-dusk-300">首页</a>
+        <a href="/worlds/" class="block hover:text-dusk-300">世界</a>
+        <a href="/features/" class="block hover:text-dusk-300">玩法</a>
+        <a href="/vip/" class="block hover:text-dusk-300">赞助</a>
+        <a href="/guide/" class="block hover:text-dusk-300">规则与新手</a>
+      </div>
+    </header>
+
+    <main class="flex-1"><slot /></main>
+
+    <footer class="border-t border-night-600/50 py-10 mt-16">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6 text-sm text-slate-400">
+        <div>
+          <p class="font-bold text-dusk-200 mb-2">落日小镇</p>
+          <p>生存 · 经济 · 家园 · 社交</p>
+          <p class="mt-1">Minecraft 生存服务器</p>
+        </div>
+        <div>
+          <p class="font-bold text-dusk-200 mb-2">服务器</p>
+          <p>Java 版</p>
+          <p class="mt-1"><code class="text-dusk-300">Play.SunsetTown.cn</code></p>
+        </div>
+        <div>
+          <p class="font-bold text-dusk-200 mb-2">联系</p>
+          <p>QQ 群 / Discord（待配置）</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-menu]");
+      btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+    </script>
+  </body>
+</html>
